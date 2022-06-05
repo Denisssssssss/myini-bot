@@ -1,0 +1,7 @@
+server:
+  port: 80
+
+telegram:
+  bot:
+    name: MyiniClientBot
+    token: ${TOKEN}
