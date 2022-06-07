@@ -4,4 +4,4 @@ server:
 telegram:
   bot:
     name: MyiniClientBot
-    token: ${TOKEN}
+    token: ${TOKEN:5325438765:AAEQv_WjGCwSCukpxoFa9YHRzyGFoPsYaRQ}

@@ -1,20 +1,29 @@
 package ru.itis.myini.client.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
+@Builder
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class AddressDto {
 
-    private final String postcode;
-    private final String region;
-    private final String city;
-    private final String street;
-    private final String buildingNumber;
+    private Long id;
+    private String postcode;
+    private String region;
+    private String city;
+    private String street;
+    private String buildingNumber;
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %s, %s %s", postcode, region, city, street, buildingNumber);
+        return String.format("ID: %s\nPostcode: %s\nRegion: %s\nCity: %s\nStreet: %s\nBuilding number: %s\n", id, postcode, region, city, street, buildingNumber);
+    }
+
+    public String payloadString() {
+        return String.format("Postcode: %s\nRegion: %s\nCity: %s\nStreet: %s\nBuilding number: %s\n", postcode, region, city, street, buildingNumber);
     }
 }

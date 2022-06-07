@@ -1,30 +1,39 @@
 package ru.itis.myini.client.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalTime;
 
-@Getter
+@Builder
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class HotelDto {
 
-    private final LocalTime checkIn;
-    private final LocalTime departure;
-    private final String name;
-    private final String email;
-    private final String phoneNumber;
+    private Long id;
+    private LocalTime checkIn;
+    private LocalTime departure;
+    private String name;
+    private String email;
+    private String phoneNumber;
 
-    private final AddressDto address;
+    private AddressDto address;
+
+    private Long cheapest;
+
+    private Long mostExpensive;
 
     @Override
     public String toString() {
-        return String.format("Name: %s\n" +
+        return String.format("ID: %s\nName: %s\n" +
                 "Email: %s\n" +
                 "Phone: %s\n" +
                 "Check in: %s\n" +
                 "Departure: %s\n" +
-                "Address: %s\n\n",
-                name, email, phoneNumber, checkIn, departure, address.toString());
+                "%s\n\n",
+                id, name, email, phoneNumber, checkIn, departure, address.payloadString());
     }
 }

@@ -25,6 +25,7 @@ ext {
 dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'com.github.xabgesagtx:telegram-spring-boot-starter:0.26'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

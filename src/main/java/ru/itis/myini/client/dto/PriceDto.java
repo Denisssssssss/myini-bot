@@ -9,10 +9,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
-    private String username;
-    private String password;
-    private String firstName;
-    private String lastName;
-    private Long telegramId;
+public class PriceDto {
+
+    private Long price;
+
+    @Override
+    public String toString() {
+        String template = "Price: %s\n";
+        return String.format(template, price);
+    }
 }
